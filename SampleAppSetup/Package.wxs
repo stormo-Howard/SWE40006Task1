@@ -1,0 +1,15 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Id="StormHoward.SampleAppSetup" Name="SampleAppSetup" Manufacturer="StormHoward" Version="1.0.0" UpgradeCode="65E6CCE2-F44E-4493-89F2-ED5031B01792">
+    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+
+	  <DirectoryRef Id="INSTALLFOLDER">
+		  <Component Id="MainExecutable" Guid="9EE74576-DED3-45F6-909A-E65B347B25BF">
+			  <File Id="DeploymentPortfolioTask1EXE" Source="$(var.DeploymentPortfolioTask1.TargetPath)" KeyPath="yes" />
+		  </Component>
+	  </DirectoryRef>
+
+    <Feature Id="Main">
+		<ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Package>
+</Wix>
